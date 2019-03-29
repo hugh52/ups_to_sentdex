@@ -157,6 +157,27 @@ chinking()
 #  which means remove from the chink one or more verbs, prepositions, determiners, or the word 'to'
 
 
+# named entity recognition
+
+# this is a form of chunking that comes with nltk, so in that regard it is unlike the custom forms of chunking shown above.
+# idea is to have the machine immediately be able to pull our "entities", like people, places, things, locations, monetary figures, etc.
+
+# two major options with nltk's ner:
+#  1) recognize all named entities
+#  2) recognize entity as its respective type, for example, people, places, things, locations, etc.
+
+def ner_one():
+  try:
+		for i in tokenized[:5]:
+			words = nltk.word_tokenize(i)
+			tagged = nltk.pos_tag(words)
+			namedEnt = nltk.ne_chunk(tagged, binary=True)
+			namedEnt.draw()
+  except Exception as e:
+			print(str(e))
+			
+ner_one()
+	
 
 
 
