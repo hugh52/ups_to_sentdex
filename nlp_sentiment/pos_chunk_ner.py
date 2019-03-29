@@ -62,6 +62,7 @@ def chunking_one():
 	    ##print(list(chunked))
   except Exception as e:
 	  print(str(e))
+		
 chunking_one()
 
 # breaking down regex line: 'chunkGram = r"""Chunk: {<RB.?>*<VB.?>*<NNP>+<NN>?}"""'
@@ -101,7 +102,7 @@ chunking_two()
 #     'print(subtree)'
 
 def chunking_three():
-	try:
+  try:
     for i in tokenized[:5]:
       words = nltk.word_tokenize(i)
       tagged = nltk.pos_tag(words)
@@ -179,7 +180,7 @@ def ner_one():
 ner_one()
 	
 def ner_two():
-	try:
+  try:
 		for i words in tokenized[:5]:
 			words = nltk.tokenize(i)
 			tagged = nltk.pos_tag(words)
