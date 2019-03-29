@@ -178,9 +178,59 @@ def ner_one():
 			
 ner_one()
 	
+def ner_two():
+	try:
+		for i words in tokenized[:5]:
+			words = nltk.tokenize(i)
+			tagged = nltk.pos_tag(words)
+			namedEnt = nltk.ne_chunk(tagged, binary=False)
+			namedEnt.draw()
+			
+  except Exception as e:
+		print(str(e))
+
+ner_two()
+
+
+# the second method will split up terms like "White House" into "White" and "House" as if they are different, while the first method
+#  correctly returns the combined term "White House"
+#  different types of Named Entities that will show up with binary set to False, shown below
+#  NE Types and Examples
+# ORGANIZATION - Georgia-Pacific Corp., WHO
+# PERSON - Eddy Bonte, President Obama
+# LOCATION - Murray River, Mount Everest
+# DATE - June, 2008-06-29
+# TIME - two fifty a m, 1:30 p.m.
+# MONEY - 175 million Canadian Dollars, GBP 10.40
+# PERCENT - twenty pct, 18.75 %
+# FACILITY - Washington Monument, Stonehenge
+# GPE - South East Asia, Midlothian
 
 
 
+# lemmatizing
+
+# similar to stemming; major difference is stemming can often create non-existant words, whereas lemmas are actual words
+#  root stem cannot be looked up in a dictionary whereas a lemma could be
+#  sometimes word will be similar while other times it will be very different
+
+from nltk.stem import WordNetLemmatizer
+
+
+lemmatizer = WordNetLemmatizer()
+
+print(lemmatizer.lemmatize("cats"))
+print(lemmatizer.lemmatize("cacti"))
+print(lemmatizer.lemmatize("geese"))
+print(lemmatizer.lemmatize("rocks"))
+print(lemmatizer.lemmatize("python"))
+print(lemmatizer.lemmatize("better", pos='a'))
+print(lemmatizer.lemmatize("best", pos='a'))
+print(lemmatizer.lemmatize("run"))
+print(lemmatizer.lemmatize("run", 'v'))
+
+# lemmatize takes a part of speech parameter "pos"
+# if "pos" parameter is left blank, default is set to "noun"; can cause problems because machine will attempt to find the nearest nouns
 
 
 
