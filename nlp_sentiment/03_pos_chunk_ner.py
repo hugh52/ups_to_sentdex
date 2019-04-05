@@ -236,3 +236,4 @@ print(lemmatizer.lemmatize("run", 'v'))
 # lemmatize takes a part of speech parameter "pos"
 # if "pos" parameter is left blank, default is set to "noun"; can cause problems because machine will attempt to find the nearest nouns
 
+
