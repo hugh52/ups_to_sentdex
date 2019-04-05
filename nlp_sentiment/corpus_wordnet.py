@@ -9,7 +9,20 @@
 
 # hear, we will use some of the methods from nltk ro handle the corpus.  we will open the Gutenberg Bible and read the first few lines.
 
+import nltk
+import pandas as pd
+import numpy as np
+import sklearn
+
+from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.corpus import stopwords
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
+from nltk.corpus import state_union
+from nltk.tokenize import PunktSentenceTokenizer
+from nltk.stem import WordNetLemmatizer
 from nltk.corpus import gutenberg
+from nltk.corpus import wordnet
 
 
 # sample text
