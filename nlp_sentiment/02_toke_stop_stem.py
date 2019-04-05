@@ -43,9 +43,4 @@ words = word_tokenize(new_text)
 for w in words:
 	print(ps.stem(w))
 
-
-
-
-
-
  
