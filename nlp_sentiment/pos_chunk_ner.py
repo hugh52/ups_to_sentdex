@@ -27,12 +27,13 @@ tokenized = custom_sent_tokenizer.tokenize(sample_text)
 
 def process_content():
 	try:
-    for i in tokenized[:5]:
-      words = nltk.word_tokenize(i)
+		for i in tokenized[:5]:
+			words = nltk.word_tokenize(i)
 			tagged = nltk.pos_tag(words)
 			print(tagged)
 	except Exception as e:
 		print(str(e))
+
 process_content()
 
 
@@ -60,7 +61,7 @@ def chunking_one():
 	    chunked.draw()
 	    ##print(chunked)
 	    ##print(list(chunked))
-  except Exception as e:
+	except Exception as e:
 	  print(str(e))
 		
 chunking_one()
@@ -94,6 +95,7 @@ def chunking_two():
       chunked.draw()
   except Exception as e:
     print(str(e))
+
 chunking_two()
 
 
@@ -178,6 +180,7 @@ def ner_one():
 			print(str(e))
 			
 ner_one()
+
 	
 def ner_two():
   try:
@@ -232,6 +235,30 @@ print(lemmatizer.lemmatize("run", 'v'))
 
 # lemmatize takes a part of speech parameter "pos"
 # if "pos" parameter is left blank, default is set to "noun"; can cause problems because machine will attempt to find the nearest nouns
+
+
+
+# corpora
+
+# the corpora if basicaly a massive data dump of all kinds of natural language data sets that are definately worth taking a look at;
+# we can view them manually, they are simply text files, xml files, etc.
+# to find where the nltk module is located in the os, use:
+# >>> import nltk
+# >>> print(nltk.__file__)
+# for me, this returns something similar to 'C:/Users/other/files/specific/to/my/computer/Anaconda3/lib/site-packages/nltk/__init__.py'
+
+# hear, we will use some of the methods from nltk ro handle the corpus.  we will open the Gutenberg Bible and read the first few lines.
+
+from nltk.corpus import gutenberg
+
+
+# sample text
+sample = gutenberg.raw("bible-kjv.txt")
+
+tok = sent_tokenize(sample)
+
+for x in range(5):
+	print(tok[x])
 
 
 
