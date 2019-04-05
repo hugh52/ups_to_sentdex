@@ -10,5 +10,7 @@ This is essentially an attempt to recreate or somewhat follow various sentdex tu
 
 I am unable to upload most data sets directly to Github because of the size, but if the individual datasets are not available here, I will do my best to include detailed instructions on how to obtain the datasets.
 
-WARNING: Since the work was origianlly completed using Python 3.6.6, I will need to go back and test everything to ensure compatability with Python 3.7.1; once this has been completed, this warning message will be removed. 
+WARNING: 
+- Since the work was origianlly completed using Python 3.6.6, I will need to go back and test everything to ensure compatability with Python 3.7.1; once this has been completed, this warning message will be removed. 
+- Additionally, since various libraries/packages/modules/what-have-you are needed at varioud times and later may not be needed, please excuse any areas where "best-practices" may not be used properly.  This includes, for instance, where packages may be listed among the imports towards the top of the file, eventhough they may not be used within the code below.  
 
