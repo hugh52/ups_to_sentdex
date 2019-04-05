@@ -1,5 +1,4 @@
-# please excuse any issues with best practices, i.e. some modules/libs/etc could be imported that are not used until later or maybe never;
-#	for now, for me, better safe than sorry...
+
  
  
 import nltk
