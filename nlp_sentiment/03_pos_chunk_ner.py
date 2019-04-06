@@ -153,7 +153,7 @@ def chinking():
       chunkParser = nltk.RegexpParser(chunkGram)
       chunked = chunkParser.parse(tagged)
       
-      chunk.draw()
+      chunked.draw()
       
   except Exception as e:
     print(str(e))
