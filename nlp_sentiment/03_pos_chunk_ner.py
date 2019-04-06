@@ -9,7 +9,12 @@ from nltk.corpus import state_union
 from nltk.tokenize import PunktSentenceTokenizer
 
 
-# PunktSentenceTokenizer can be trained on any body of text, since it is capable of unsupervised machine learning
+# PunktSentenceTokenizer can be trained on any body of text (ok most...), since it is capable of unsupervised machine learning.
+
+# to find file path for corpora, enter 'print(nltk.__file__)' into terminal; output is destination to nltk folder. Next, open 'data.py'.
+# within first 100 lines are generic file paths for different operating systems.  
+# NOTE: 'nltk.download()' must be entered before these datasets will download; this was explained at the start of the tutorial.
+# a list (up-to-date, I think?) of what is contained in the corpora can be found at 'http://www.nltk.org/nltk_data/'
 
 # create training and testing data
 train_text = state_union.raw("2005-GWBush.txt")
@@ -19,11 +24,10 @@ custom_sent_tokenizer = PunktSentenceTokenizer(train_text)
 # then actually tokenize...
 tokenized = custom_sent_tokenizer.tokenize(sample_text)
 
-
 # nltk can do Part of Speech tagging, essentially labelling words in a sentence as nouns, adjectives, verbs, etc. It can also label by
-#  tense and more. A list of tags, what they mean, and some examples should be located in a separate folder.
+# tense and more. A list of tags, what they mean, and some examples should be located in a separate folder.
 
-# now, create a function that will run through and tag all of the parts of speech per sentence.
+# now, we create a function that will run through and tag all of the parts of speech per sentence.
 
 def process_content():
 	try:
@@ -39,9 +43,9 @@ process_content()
 
 # chunking
 
-# Once part of speech is confirmed, use chunking to group words into (hopefully) meaningful chunks. One goal is to group into so-called 
+# once part of speech is confirmed, use chunking to group words into (hopefully) meaningful chunks. one goal is to group into so-called 
 #  "noun-phrases", which are simply phrases containing a noun, plus maybe one or two descriptive parts of speech (verb, adverb, etc.)
-#  Overall idea is group nouns with words related to or ideally describing the noun. Below we combine part of speech tags with regex.
+#  overall idea is group nouns with words related to or ideally describing the noun. below we combine part of speech tags with regex.
 
 # '+' = match 1 or more
 # '?' = match 0 or 1 repetitions
@@ -72,8 +76,8 @@ chunking_one()
 # '<NNP>+' = one or more proper nouns
 # '<NN>?' = zero or on singular noun
 # can be useful at times to print out the specific chunks
-# If we want to access the data via our program and not just visually, what may have been seen in the printed output is that our
-#  "chunked" variable is an nltk tree. Each "chunk" and non-chunk" is a "subtree" of the tree. These can be referenced using something
+# if we want to access the data via our program and not just visually, what may have been seen in the printed output is that our
+#  "chunked" variable is an nltk tree. each "chunk" and non-chunk" is a "subtree" of the tree. these can be referenced using something
 #  like 'chunked.subtrees', which will then allow us to iterate through these subtrees like the following methods show.
 # 'for subtree in chunked.subtrees():'
 # 	'print(subtree)'
