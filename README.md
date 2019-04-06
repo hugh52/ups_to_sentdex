@@ -1,10 +1,16 @@
-
 # ups_to_sentdex
 
-PLEASE NOTE: 
 
+PLEASE NOTE: 
 The following copyright notification is to/for Harrison Kinsley/sentdex, which will also be available under the project licenses along with the MIT license: (c) Harrison Kinsley/sentdex .  
 
+NEEDS EDITING NEEDS EDITING NEEDS EDITING
+NEEDS EDITING NEEDS EDITING NEEDS EDITING
+NEEDS EDITING NEEDS EDITING NEEDS EDITING
+NEEDS EDITING NEEDS EDITING NEEDS EDITING
+NEEDS REVIEW NEEDS REVIEW NEEDS REVIEW
+NEEDS REVIEW NEEDS REVIEW NEEDS REVIEW
+NEEDS REVIEW NEEDS REVIEW NEEDS REVIEW
 
 The majority or pretty much all of this material was obtained by following along with the tutorials on https://pythonprogramming.net/ ; the youtube videos at https://www.youtube.com/user/sentdex ; and/or reviewing the actual sentdex website at http://sentdex.com/ .  The notes are either taken word for word from the tutorials or paraphrased, with some extras added in here and there by myself. 
 
@@ -16,7 +22,7 @@ Additionally, since various libraries/packages/modules/what-have-you are needed 
 
 Even with my advanced and "university-certified" knowledge (that was a joke, albeit a bad one, but a joke) of mathematics, statistics, and finance, I still did not have the means to apply my knowledge.  For years, I would start trying to learn C++, then R, then get distracted, then back to R, maybe another shot at C++, on and on until I had to find a job to actually make money instead of saying I was learning how I would make money.  I have read many books, followed along with other tutorials, but nothing has come close to what sentdex is able to offer.  The programming knowledge, along with the mix of statistical and practical ways of thinking, is extremely rare.  The energy and excitement coming from somone so passionate about what they do is so contagious, I have sometimes even found myself wishing he did not display the brevity that is one of those rare attributes seemingly so uncommon in this field and many others.  I have yet to find another programming course out there as pragmatic as the ones by sentdex; you will build actual applications that, given the concepts he explains, you can then expound upon yourself to create an application of your own.  Please, if you have not already, I strongly urge you to view the tutorials by sentdex.  
 
-In a separate section, titled ' ' I have tried to shed some light on my qualifications (or lack thereof...), as well as my background or story (as quick as possible, of course, there is waaay more) just in case it matters or anyone cares; if you wish to dicuss specifics, simply email me at 'whcherry52@gmail.com', and refernce this project, github, or whatever will get through my spam filter while also catching my attention, in the subject.
+In a separate file, titled 'my_background_story...' I have tried to shed some light on my qualifications (or lack thereof...), as well as my background or story (as quick as possible, of course, there is waaay more) just in case it matters or anyone cares; if you wish to dicuss specifics, simply email me at 'whcherry52@gmail.com', and refernce this project, github, or whatever will get through my spam filter while also catching my attention, in the subject.
 
 
 WARNING: 
