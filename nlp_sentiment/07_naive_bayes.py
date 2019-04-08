@@ -30,23 +30,26 @@ featuresets = [(find_features(rev), category) for (rev, category) in documents]
 # choose algo (here naive bayes) and split data into train and test;
 # serious bias issues can come about if you train and test on same, so avoid this;
 
-# since dataset is shuffled, we will assign first 2,000 shuffled reviews for training set, which includes positive and negative reviews;
-# we will test against the last 1,000 to see how accurate we are
+# since dataset is shuffled, we will assign first 2,500 shuffled reviews for training set, which includes positive and negative reviews;
+# we will test against the last 500 to see how accurate we are
 
 # NOTE: the tutorial says to train with 1,900 and test with the "last 100" but the dataset has 3,000 not 2,000.  I assume this was just 
 #       a typo so I have adjusted the numbers.  Once/if I hear back, I will update here. 
 
-# this is considered supervised machine learning, because we are showing the machine data and telling it "this data is positive" or"this
+# this is considered supervised machine learning, since we are showing the machine data and telling it "this data is positive" or "this
 # data is negative"; after training is complete, we show the machine new data and ask the computer, based on what was taught before, 
 # what the computer thinks the category of the data is.
+
+import nltk
+
 
 # first we have to split the data
 
 # set we will train classifier with:
-training_set = featuresets[:2000]
+training_set = featuresets[:2500]
 
 # set we will test against:
-testing_set = featuresets[2000:]
+testing_set = featuresets[2500:]
 
 # define and train classifier:
 classifier = nltk.NaiveBayesClassifier.train(training_set)
@@ -55,19 +58,14 @@ classifier = nltk.NaiveBayesClassifier.train(training_set)
 print("Classifier accuracy percent:",(nltk.classify.accuracy(classifier, testing_set))*100)
 
 
+# we are able to test the data because, as mentioned above, we have the correct answers.  in testing, we show the computer data without
+# the correct answer; if it guess correctly (what we know the answer to be), then computer is correct.  given the shuffling, we might
+# come up with varying accuracy, but it should lie in the range from 60-75% on average.
 
+# to find the most valuable words in reference to positive or negative reviews:
+classifier.show_most_informative_features(15)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+# this too will vary, but the ratio of occurrances in neg to pos or vice versa should show for every word printed out.  so if 'word' at
+# top has 'word = True neg:pos = 10.6:1.0' next to it, this means that 'word' appears 10.6 times more often in negative reviews as it 
+# does in positive reviews.
 
