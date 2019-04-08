@@ -15,7 +15,8 @@
 # my full file path here is similar to 'C:/Users/some/local/name/and/then/AppData/Roaming/nltk_data/corpora/' ;
 
 # as previously mentioned, there are many different file types within this folder, so we could surely open some with a simple click or
-# maybe a double-click; and of course, for simple text files, we could use normal Python code like 'open()' and/or 'read()' 
+# maybe a double-click; and of course, for simple text files, we could use normal Python code like 'open()', 'read()', etc. 
+# however, the nltk module includes methods to handle files within the corpus; an example below reads from the Gutenberg Bible
 
 # here, we will use some of the methods from nltk to handle the corpus.  we will open the Gutenberg Bible and read the first few lines.
 
@@ -43,8 +44,11 @@ for x in range(5):
 
 # wordnet
 
-# wordnet is a collection of words, definitions, examples of their use, synonyms, antonyms, etc; 
+# wordnet is a lexical database for the English language that was created by Princeton; it is part of the corpus
+# we can use nltk with wordnet to obtain definitions, examples of word use, synonyms, antonyms, etc; 
 # it is one of the more advanced datasets in the corpus
+
+# it may be easiest to think of wordnet as a collection of words, along with their definitions, examples of use, synonyms, etc.
 
 from nltk.corpus import wordnet
 
