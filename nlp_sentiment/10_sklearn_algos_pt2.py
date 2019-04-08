@@ -78,6 +78,16 @@ NuSVC_classifier.train(training_set)
 print("NuSVC_classifier accuracy percent:", (nltk.classify.accuracy(NuSVC_classifier, testing_set))*100)
 
 
+# the results I produced were higher in all accuracies, as well as higher ratios within the list of most_informative_features; this
+# could just be reading it wrong or doing something incorrectly, improvement in modules since tutorial originally came out, just pure
+# luck, etc;
+
+# according to the website, SVC had an accuracy percentage around 45%, meaning it is wrong more often than right out of the gate, so
+# that one could be dumped; I will go ahead and do this to follow along, although my SVC showed 72%, still the lowest but not by much.
+
+
+
+# THE BELOW IS OPTIONAL NOT NECESSARY, JUST MY RAMBLINGS, AND QUITE POSSIBLY CONTAINS INCORRECT INFORMATION.
 
 # I will have to study these in depth and am not certain of the abbreviations until then, but from my experience I will attempt to 
 # tell what these terms stand for; unfortunately, even a surface level conceptual exaplanation of how they work and the particulars of 
