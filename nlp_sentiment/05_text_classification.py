@@ -48,23 +48,7 @@ print(all_words["stupid"])
 
 
 # below is the "Challenge" which provides a method to word with files that are really just a mess and are similar to the below:
-# example below comes straight from sentdex tutorials:
-'''
-ham,Go until jurong point, crazy.. Available only in bugis n great world la e buffet... Cine there got amore wat...
-ham,Ok lar... Joking wif u oni...
-spam,Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005. Text FA to 87121 to receive entry question(std txt rate)T&C's apply 08452810075over18's
-ham,U dun say so early hor... U c already then say...
-ham,Nah I don't think he goes to usf, he lives around here though
-spam,FreeMsg Hey there darling it's been 3 week's now and no word back! I'd like some fun you up for it still? Tb ok! XxX std chgs to send, 1.50 to rcv
-ham,Even my brother is not like to speak with me. They treat me like aids patent.
-ham,As per your request 'Melle Melle (Oru Minnaminunginte Nurungu Vettam)' has been set as your callertune for all Callers. Press *9 to copy your friends Callertune
-spam,WINNER!! As a valued network customer you have been selected to receivea 900 prize reward! To claim call 09061701461. Claim code KL341. Valid 12 hours only.
-spam,Had your mobile 11 months or more? U R entitled to Update to the latest colour mobiles with camera for Free! Call The Mobile Update Co FREE on 08002986030
-ham,I'm gonna be home soon and i don't want to talk about this stuff anymore tonight, k? I've cried enough today.
-spam,SIX chances to win CASH! From 100 to 20,000 pounds txt> CSH11 and send to 87575. Cost 150p/day, 6days, 16+ TsandCs apply Reply HL 4 info
-spam,URGENT! You have won a 1 week FREE membership in our 100,000 Prize Jackpot! Txt the word: CLAIM to No: 81010 TC www.dbuk.net LCCLTD POBOX 4403LDNW1A7RW18
-'''
-# take the contents above and save it to a file, or use the one I uploaded here.
+# example of bad file is included here entitled 'poorly_delimited.txt'
 
 # now we will open and read the initial file contents and store them to our contents variable
 with open('poorly_delimited.txt', 'r') as f:
