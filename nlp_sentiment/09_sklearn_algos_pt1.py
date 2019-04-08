@@ -51,58 +51,21 @@ classifier_f.close()
 # anyway, on with the show....
 
 import sklearn
-from nltk.classift.scikitlearn import SklearnClassifier
+from nltk.classify.scikitlearn import SklearnClassifier
 from sklearn.naive_bayes import MultinomialNB, BernoulliNB
 
 
 # the classification algos are very simple to use, but then again, that is in no way supposed to be the difficult part...
 MNB_classifier = SklearnClassifier(MultinomialNB())
 MNB_classifier.train(training_set)
-print("MultinomialNB accuracy percent:", nltk.classify.accuracy(MNB_classifier, testing_Set))
+print("MultinomialNB accuracy percent:", nltk.classify.accuracy(MNB_classifier, testing_set))
+
+BNB_classifier = SklearnClassifier(BernoulliNB())
+BNB_classifier.train(training_set)
+print("BernoulliNB accuracy percent:", nltk.classify.accuracy(BNB_classifier, testing_set))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# the rest is continued into the following file, which brings everything together to show what the full process might look like
+#  (when dealing with algorithms individually, of course, but this is far from the end...)
 
 
