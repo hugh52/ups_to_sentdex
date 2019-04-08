@@ -20,7 +20,7 @@ from nltk.corpus import movie_reviews
 # and follow that by the 'positive' or 'negative' label, all in one big list.
 
 documents = [(list(movie_reviews.words(fileid)), category)
-             for category in movie_review.category()
+             for category in movie_reviews.categories()
              for fileid in movie_review.fileids()]
 
 # since we will be training and testing, we now use random to shuffle documents;
@@ -64,13 +64,34 @@ ham,I'm gonna be home soon and i don't want to talk about this stuff anymore ton
 spam,SIX chances to win CASH! From 100 to 20,000 pounds txt> CSH11 and send to 87575. Cost 150p/day, 6days, 16+ TsandCs apply Reply HL 4 info
 spam,URGENT! You have won a 1 week FREE membership in our 100,000 Prize Jackpot! Txt the word: CLAIM to No: 81010 TC www.dbuk.net LCCLTD POBOX 4403LDNW1A7RW18
 '''
-# take the contents above and save it to a file 
+# take the contents above and save it to a file, or use the one I uploaded here.
 
 # now we will open and read the initial file contents and store them to our contents variable
-with open('poorly_delimited.txt',
+with open('poorly_delimited.txt', 'r') as f:
+	contents = f.read()
+	# now split and begin to iterate through the lines by splitting apart the classification from the text per line
+	lines = contents.split('\n')
+	for l in lines:
+		# this could also obviously be done with regular expressions
+		new_l = l.split(',',1)
+	
+# now just store to a list or dataframe
 
+import pandas as pd
 
+correcly_split_file = []
 
+with open('poorly_delimited.txt','r') as f:
+	contents = contents.read()
+	lines = contents.split('\n')
+	
+	for l in lines:
+		new_l = l.split(',',1)
+		correctly_split_file.append(new_l)
+		
+df = pd.DataFrame(correctly_split_file, columns = ['Classification', 'Text'])
+									
+print(df.head())
 
 
 
