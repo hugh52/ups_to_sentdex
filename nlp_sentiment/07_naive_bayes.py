@@ -30,33 +30,27 @@ featuresets = [(find_features(rev), category) for (rev, category) in documents]
 # choose algo (here naive bayes) and split data into train and test;
 # serious bias issues can come about if you train and test on same, so avoid this;
 
-# since dataset is shuffled, we will assign first 2,500 shuffled reviews for training set, which includes positive and negative reviews;
-# we will test against the last 500 to see how accurate we are
-
-# NOTE: the tutorial says to train with 1,900 and test with the "last 100" but the dataset has 3,000 not 2,000.  I assume this was just 
-#       a typo so I have adjusted the numbers.  Once/if I hear back, I will update here. 
+# since dataset is shuffled, we will assign first 1,900 shuffled reviews for training set, which includes positive and negative reviews;
+# we will test against the last 100 to see how accurate we are
 
 # this is considered supervised machine learning, since we are showing the machine data and telling it "this data is positive" or "this
 # data is negative"; after training is complete, we show the machine new data and ask the computer, based on what was taught before, 
 # what the computer thinks the category of the data is.
 
-import nltk
-
-
 # first we have to split the data
 
+
 # set we will train classifier with:
-training_set = featuresets[:2500]
+training_set = featuresets[:1900]
 
 # set we will test against:
-testing_set = featuresets[2500:]
+testing_set = featuresets[1900:]
 
 # define and train classifier:
 classifier = nltk.NaiveBayesClassifier.train(training_set)
 
 # next, we test it:
 print("Classifier accuracy percent:",(nltk.classify.accuracy(classifier, testing_set))*100)
-
 
 # we are able to test the data because, as mentioned above, we have the correct answers.  in testing, we show the computer data without
 # the correct answer; if it guess correctly (what we know the answer to be), then computer is correct.  given the shuffling, we might
