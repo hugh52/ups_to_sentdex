@@ -46,7 +46,8 @@ print(all_words.most_common(15))
 # to find the number of occurrences of some given word:
 print(all_words["stupid"])
 
-
+# PLEASE IGNORE BELOW; for some reason I hit difficulties with the output, once everything else is complete I will come back to this.
+'''
 # below is the "Challenge" which provides a method to word with files that are really just a mess and are similar to the below:
 # example of bad file is included here entitled 'poorly_delimited.txt'
 
@@ -76,7 +77,7 @@ with open('poorly_delimited.txt','r') as f:
 df = pd.DataFrame(correctly_split_file, columns = ['Classification', 'Text'])
 									
 print(df.head())
-
+'''
 
 
 
