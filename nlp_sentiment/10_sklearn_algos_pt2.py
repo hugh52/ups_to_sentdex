@@ -10,6 +10,8 @@ import sklearn
 from nltk.corpus import movie_reviews
 from nltk.classify.scikitlearn import SklearnClassifier
 from sklearn.naive_bayes import MultinomialNB, BernoulliNB
+from sklearn.linear_model import LogisticRegression, SGDClassifier
+from sklearn.svm import SVC, LinearSVC, NuSVC
 
 
 documents = [(list(movie_reviews.words(fileid)), category)
@@ -46,13 +48,34 @@ classifier.show_most_informative_features(15)
 
 MNB_classifier = SklearnClassifier(MultinomialNB())
 MNB_classifier.train(training_set)
-print("MultinomialNB accuracy percent:", nltk.classify.accuracy(MNB_classifier, testing_set))
+print("MultinomialNB accuracy percent:", (nltk.classify.accuracy(MNB_classifier, testing_set))*100)
 
 BNB_classifier = SklearnClassifier(BernoulliNB())
 BNB_classifier.train(training_set)
-print("BernoulliNB accuracy percent:", nltk.classify.accuracy(BNB_classifier, testing_set))
+print("BernoulliNB accuracy percent:", (nltk.classify.accuracy(BNB_classifier, testing_set))*100)
 
+# as seen in the imports above, a few additional classification algos are brought in from sklearn for comparison purposes;
+# and maybe to see if they might be of any help when mixed with the two or three we are already using...
 
+LogisticRegression_classifier = SklearnClassifier(LogisticRegression())
+LogisticRegression_classifier.train(training_set)
+print("LogisticRegression_classifier accuracy percent:", (nltk.classify.accuracy(LogisticRegression_classifier, testing_set))*100)
+
+SGDClassifier_classifier = SklearnClassifier(SGDClassifier())
+SGDClassifier_classifier.train(training_set)
+print("SGDClassifier_classifier accuracy percent:", (nltk.classify.accuracy(SGDClassifier_classifier, testing_set))*100)
+
+SVC_classifier = SklearnClassifier(SVC())
+SVC_classifier.train(training_set)
+print("SVC_classifier accuracy percent:", (nltk.classify.accuracy(SVC_classifier, testing_set))*100)
+
+LinearSVC_classifier = SklearnClassifier(LinearSVC())
+LinearSVC_classifier.train(training_set)
+print("LinearSVC_classifier accuracy percent:", (nltk.classify.accuracy(LinearSVC_classifier, testing_set))*100)
+
+NuSVC_classifier = SklearnClassifier(NuSVC())
+NuSVC_classifier.train(training_set)
+print("NuSVC_classifier accuracy percent:", (nltk.classify.accuracy(NuSVC_classifier, testing_set))*100)
 
 
 
