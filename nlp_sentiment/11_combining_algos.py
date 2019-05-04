@@ -95,7 +95,46 @@ class VoteClassifier(ClassifierI):
 	def __init__(self, *classifiers):
 		self._classifiers = classifiers
 		
-		#
+	# above: we are calling our class VoteClassifier and inheriting from nltk's ClassifierI;
+	# then, we take the list of classifiers passed to our class, and assign it to self._classifiers
+	
+	# next, we create a classift method and call it classify; later, we can invoke it as 'nltk.classify'
+	
+	def classify(self, features):
+		votes = []
+		for c in self._classifiers:
+			v = c.classify(features)
+			votes.append(v)
+		return mode(votes)
+	
+	# explanation of code above:
+			# - iterate through the list of classifier objects, 
+			# - for each classifier object, ask it to classify based on the features
+			# - the classification is treated as a vote
+			# - so after iteration is complete, we have the most popular vote,
+			#				which is the classification returned the most often
+			
+	# next, we add an additional method for a confidence measure;
+	# we simply tally the number of votes for the winning vote,
+	# and compare that to the number of votes for the losing vote,
+	# obviously, the greater the margin, the more confidence we can have in the decision
+	
+	def confidence(self, feature):
+		votes = []
+		for c in self._classifiers:
+			v = c.classify(features)
+			votes.append(v)
+			
+		choice_votes = votes.count(mode(votes))
+		conf = choice_votes / len(votes)
+		return conf
+		
+		
+#======================================================================================================================================#		
+#		next, we will combine all the code together.
+
+		
+		
 
 
 
