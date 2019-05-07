@@ -114,7 +114,7 @@ print("NuSVC_classifier accuracy percent:", (nltk.classify.accuracy(NuSVC_classi
 # so when using .1, then at most 10% of training examples will be misclassified while at least 10% of the training examples will 
 # be support vectors; support vectors are samples that lie on the margins of the maximum-margin hyperplane 
 
-# in general, support vector classification works by finding seperating hyperplanes in higher dimentsions while balancing the inclusion
+# in general, support vector classification works by finding seperating hyperplanes in higher dimensions while balancing the inclusion
 # of training variables with the chance of over-fitting.
 
 # as for C and Nu, they are really about the same, except C must be (or will ideally be) optimized, requiring additional steps.
