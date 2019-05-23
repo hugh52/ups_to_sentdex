@@ -1,0 +1,47 @@
+#=============================================================================#
+libs/modules used during nlp project(s):
+#=============================================================================#
+
+import nltk
+import pandas as pd
+import numpy as np
+import sklearn
+
+from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
+from nltk.corpus import state_union
+from nltk.tokenize import PunktSentenceTokenizer
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import gutenberg
+from nltk.corpus import wordnet
+import random
+from nltk.corpus import movie_reviews
+from nltk.classify.scikitlearn import SklearnClassifier
+import pickle
+from sklearn.naive_bayes import MultinomialNB, BernoulliNB
+from sklearn.linear_model import LogisticRegression, SGDClassifier
+from sklearn.svm import SVC, LinearSVC, NuSVC
+from nltk.classify import ClassifierI
+from statistics import mode
+
+import warnings
+warnings.simplefilter('ignore')
+
+#=============================================================================#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

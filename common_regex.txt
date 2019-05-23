@@ -1,0 +1,4 @@
++ = match 1 or more
+? = match 0 or 1 repetitions.
+* = match 0 or MORE repetitions	  
+. = Any character except a new line
