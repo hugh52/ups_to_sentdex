@@ -1,5 +1,5 @@
 #=============================================================================#
-libs/modules used during nlp project(s):
+libs/modules associated with this nlp project:
 #=============================================================================#
 
 import nltk
