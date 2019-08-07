@@ -51,17 +51,18 @@ class VoteClassifier(ClassifierI):
         return conf
 
 
-# read 'documents', 'word_features', and 'featuresets' pickled files:
+# read 'documents', 'word_features', and 'featuresets' pickled files,
+# again assuming they are stored in directory named 'data_etc/'::
 
-documents_f = open("C:/Users/William/nlp/ghub/g_pickled_algos/documents.pickle","rb")
+documents_f = open("data_etc/documents.pickle","rb")
 documents = pickle.load(documents_f)
 documents_f.close()
 
-word_features_f = open("C:/Users/William/nlp/ghub/g_pickled_algos/word_features.pickle","rb")
+word_features_f = open("data_etc/word_features.pickle","rb")
 word_features = pickle.load(word_features_f)
 word_features_f.close()
 
-featuresets_f = open("C:/Users/William/nlp/ghub/g_pickled_algos/featuresets.pickle","rb")
+featuresets_f = open("data_etc/featuresets.pickle","rb")
 featuresets = pickle.load(featuresets_f)
 featuresets_f.close()
 
@@ -85,29 +86,30 @@ training_set = featuresets[:10000]
 testing_set = featuresets[10000:]
 
 
-# read in algos from saved pickled files:
+# read in algos from saved pickled files, 
+# again assuming they are stored in directory named 'data_etc/':
 
-open_file = open("C:/Users/William/nlp/ghub/g_pickled_algos/pickled_algo_originalnaivebayes5k.pickle","rb")
+open_file = open("data_etc/pickled_algo_originalnaivebayes5k.pickle","rb")
 classifier = pickle.load(open_file)
 open_file.close()
 
-open_file = open("C:/Users/William/nlp/ghub/g_pickled_algos/pickled_algo_MNB_classifier5k.pickle","rb")
+open_file = open("data_etc/pickled_algo_MNB_classifier5k.pickle","rb")
 MNB_classifier = pickle.load(open_file)
 open_file.close()
 
-open_file = open("C:/Users/William/nlp/ghub/g_pickled_algos/pickled_algo_BernoulliNB_classifier5k.pickle","rb")
+open_file = open("data_etc/pickled_algo_BernoulliNB_classifier5k.pickle","rb")
 BernoulliNB_classifier = pickle.load(open_file)
 open_file.close()
 
-open_file = open("C:/Users/William/nlp/ghub/g_pickled_algos/pickled_algo_LogisticRegression_classifier5k.pickle","rb")
+open_file = open("data_etc/pickled_algo_LogisticRegression_classifier5k.pickle","rb")
 LogisticRegression_classifier = pickle.load(open_file)
 open_file.close()
 
-open_file = open("C:/Users/William/nlp/ghub/g_pickled_algos/pickled_algo_LinearSVC_classifier5k.pickle","rb")
+open_file = open("data_etc/pickled_algo_LinearSVC_classifier5k.pickle","rb")
 LinearSVC_classifier = pickle.load(open_file)
 open_file.close()
 
-open_file = open("C:/Users/William/nlp/ghub/g_pickled_algos/pickled_algo_SGDC_classifier5k.pickle","rb")
+open_file = open("data_etc/pickled_algo_SGDC_classifier5k.pickle","rb")
 SGDC_classifier = pickle.load(open_file)
 open_file.close()
 
