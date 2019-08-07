@@ -124,8 +124,8 @@ class VoteClassifier(ClassifierI):
 			
 	# next, we add an additional method for a confidence measure; we simply tally the number of votes for the winning vote,
 	# and compare that to the number of votes for the losing vote, obviously, the greater the margin, the more confidence we can
-  # have in the decision; for example, 3/5 votes for positive is weaker than 5/5 votes for positive, so we can use the actual
-  # ratio of votes as a confidence indicator
+  	# have in the decision; for example, 3/5 votes for positive is weaker than 5/5 votes for positive, so we can use the actual
+  	# ratio of votes as a confidence indicator
 	
 	def confidence(self, feature):
 		votes = []
@@ -201,7 +201,7 @@ def find_features(document):
 
     return features
 
-## print((find_features(movie_reviews.words('neg/cv000_29416.txt'))))
+##print((find_features(movie_reviews.words('neg/cv000_29416.txt'))))
 featuresets = [(find_features(rev), category) for (rev, category) in documents]
 
 training_set = featuresets[:1900]
@@ -217,7 +217,7 @@ testing_set = featuresets[1900:]
 
 # if you are running this in a virtual environment or in general if you are having problems reaching the pickled algo, you may
 # need to enter the absolute path instead of simply a relative path like "naivebayes.pickle"; absolute path example shown below:
-## classifier_f = open("C:/Users/your/path/to/naivebayes.pickle","rb")
+##classifier_f = open("C:/Users/your/path/to/naivebayes.pickle","rb")
 classifier_f = open("naivebayes.pickle","rb")
 classifier = pickle.load(classifier_f)
 classifier_f.close()
@@ -241,9 +241,9 @@ SGDClassifier_classifier = SklearnClassifier(SGDClassifier())
 SGDClassifier_classifier.train(training_set)
 print("SGDClassifier_classifier accuracy percent:", (nltk.classify.accuracy(SGDClassifier_classifier, testing_set))*100)
 
-## SVC_classifier = SklearnClassifier(SVC())
-## SVC_classifier.train(training_set)
-## print("SVC_classifier accuracy percent:", (nltk.classify.accuracy(SVC_classifier, testing_set))*100)
+##SVC_classifier = SklearnClassifier(SVC())
+##SVC_classifier.train(training_set)
+##print("SVC_classifier accuracy percent:", (nltk.classify.accuracy(SVC_classifier, testing_set))*100)
 
 LinearSVC_classifier = SklearnClassifier(LinearSVC())
 LinearSVC_classifier.train(training_set)
@@ -263,6 +263,7 @@ voted_classifier = VoteClassifier(classifier,
                                   LogisticRegression_classifier)
 
 print("voted_classifier accuracy percent:", (nltk.classify.accuracy(voted_classifier, testing_set))*100)
+
 
 print("Classification:", voted_classifier.classify(testing_set[0][0]), "Confidence %:", voted_classifier.confidence(testing_set[0][0])*100)
 print("Classification:", voted_classifier.classify(testing_set[1][0]), "Confidence %:", voted_classifier.confidence(testing_set[1][0])*100)
