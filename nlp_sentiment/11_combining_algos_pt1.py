@@ -106,7 +106,7 @@ class VoteClassifier(ClassifierI):
 	# above: we are calling our class VoteClassifier and inheriting from nltk's ClassifierI;
 	# then, we take the list of classifiers passed to our class, and assign it to self._classifiers
 	
-	# next, we create a classification method and call it classify; later, we can invoke it as 'nltk.classify'
+	# next, we create a classification method and call it classify:
 	
 	def classify(self, features):
 		votes = []
@@ -209,15 +209,18 @@ testing_set = featuresets[1900:]
 
 # instead of training this classification algo again, we simply access the pickled algo file we saved previously; this
 # process is shown below (the commented out section directly below is old code before pickled algo was saved)
-# if you need to review this topic, as it will be used extensively in the upcoming sections, please go back over the section
-# titled "08_saving_classifiers.py" and/or "09_sklearn_algos_pt1.py"
+# if you need to review this topic, as it will be used extensively in the upcoming sections, please go back over the sections
+# titled "08_saving_classifiers.py" and/or "09_sklearn_algos.py"
+
 ## classifier = nltk.NaiveBayesClassifier.train(training_set)
 ## print("Original Naive Bayes Algo accuracy percent:", (nltk.classify.accuracy(classifier, testing_set))*100)
 ## classifier.show_most_informative_features(15)
 
 # if you are running this in a virtual environment or in general if you are having problems reaching the pickled algo, you may
 # need to enter the absolute path instead of simply a relative path like "naivebayes.pickle"; absolute path example shown below:
+
 ##classifier_f = open("C:/Users/your/path/to/naivebayes.pickle","rb")
+
 classifier_f = open("naivebayes.pickle","rb")
 classifier = pickle.load(classifier_f)
 classifier_f.close()
